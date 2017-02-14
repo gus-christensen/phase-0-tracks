@@ -1,3 +1,50 @@
 body {
-	background-color: lightblue;
+	background-color: lightgray;
+  margin: 0px;
+}
+
+h2 {
+  font-family: helvetica;
+}
+
+header {
+  border-style: solid;
+  width: 96.7%;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  font-family: helvetica;
+}
+
+footer {
+  text-align: center;
+  border-style: solid;
+  width: 97.6%;
+  margin-top: -3px;
+}
+
+.column-1 {
+  background-color: lightblue;
+  display: inline-block;
+  float: left;
+  border-style: solid;
+  margin-top: -3px;
+  width: 46.9%;
+  padding: 7px;
+  height: 1000px;
+}
+
+.column-2 {
+  background-color: hotpink;
+  display: inline-block vertical-align;
+  float: left;
+  border-style: solid;
+  border-left-style: hidden;
+  margin-top: -3px;
+  width: 46.9%;
+  padding: 7px;
+  margin-left: 0px;
+  height: 1000px
 }
