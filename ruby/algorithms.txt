@@ -1,0 +1,27 @@
+
+#ELEVATOR ALGORITHM
+If the exterior of the elevator only has one button (#if you are on the highest or lowest floor), push the button!
+
+Else, if your current floor number is greater than your destination floor number, push the down button,
+
+Else, if your current floor number is less that your destination floor number, push the up button.
+
+Wait patiently for no more than 2 minutes.
+If after 2 minutes that elevator door has not opened, wait impatiently for an additional 1 minute. 
+If after 3 total minutes the elevator door has not opened, report outage to master and management.
+
+When the elevator door opens, scoot fully into the elevator and press button for the corresponding destination floor, and then press the door close button every 0.5 seconds until the door begins to close.
+
+When the elevator door opens AND the elevator says it is on your destination floor, exit the elevator.
+
+
+#TV REMOTE ALGORITHM
+If TV is off, turn on the TV.
+If Cable is off, turn on Cable.
+
+If not on the Tennis Channel, change channel to Tennis Channel.
+If commercials, wait for tennis.
+If tennis is not Live AND not a replay from the previous 36hrs that includes any Favorites = {Venus, Pavlyuchenkova, Jankovic, Thiem, Simon, Cilic, Del Potro, … Ferrer}, change channel to CNN.
+After 2 minutes of not Commercials, change channel to MSNBC.
+After 2 minutes of not Commercials, turn off TV, turn off Cable.
+
