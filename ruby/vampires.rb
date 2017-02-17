@@ -63,7 +63,11 @@ while (survey_count > 0)
 	end
 
 	survey_count = survey_count - 1
-	puts "You have #{survey_count} more surveys to input."
+	if survey_count == 1
+		puts "You have 1 more survey to input."
+	else
+		puts "You have #{survey_count} more surveys to input."
+	end
 end
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
