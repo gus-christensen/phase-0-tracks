@@ -14,7 +14,7 @@ def encrypt(string)
 end
 
 #instead of .next, decrypt uses an algorithm for the previous index of "abcdefghijklmnopqrstuvwxyz !"
-#use .tr to retain spaces
+#use .tr to retain spaces and to properly replace a to z
 def decrypt(string)
 	string.tr(' ', '!')
 	string.tr('a', ' ')
@@ -40,9 +40,9 @@ password = gets.chomp
 
 
 #here's the meltdown. 
-#lines 48-51 DON'T WORK.
-#46-47 are now producing an output. 
-#52-3 have produced output in every variation.
+#lines 48-51 do not produce any output
+#46-47 produce an output 
+#52-3 produce an output
 if choice == "encrypt"
 	puts encrypt(password)
 elsif choice == "decrypt"
