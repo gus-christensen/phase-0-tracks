@@ -40,9 +40,9 @@ both = decrypt(encrypt(password))
 #lines 52-3 also work. 
 #lines 48-51 DON'T WORK.
 #I know that I shouldn't need to use extra variables for encryption/decryption/both 
-#(and add the extra step for the interpolation)
-#but ive tried many variations, 
-#and this is the only way that 46-47 are producing an output.
+#(and shouldn't have to add the extra step for the interpolation)
+#but I've tried many variations, 
+#and this is the only way that 46-47 are producing an output. however, 52-3 have produced output in every variation.
 if choice == "encrypt"
 	puts "#{encryption}"
 elsif choice == "decrypt"
