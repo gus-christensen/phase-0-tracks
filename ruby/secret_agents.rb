@@ -31,24 +31,24 @@ puts "do you need to encrypt or decrypt a password?"
 choice = gets.chomp
 puts "what is your password?"
 password = gets.chomp
-encryption = encrypt(password)
-decryption = decrypt(password)
-both = decrypt(encrypt(password))
+
+
+
 
 #here's the meltdown. 
-#lines 46-7 are functioning. 
-#lines 52-3 also work. 
+
+
 #lines 48-51 DON'T WORK.
-#I know that I shouldn't need to use extra variables for encryption/decryption/both 
-#(and shouldn't have to add the extra step for the interpolation)
-#but I've tried many variations, 
-#and this is the only way that 46-47 are producing an output. however, 52-3 have produced output in every variation.
+#extra variables/interpolation removed 
+
+#46-47 are producing an output. 
+#52-3 have produced output in every variation.
 if choice == "encrypt"
-	puts "#{encryption}"
+	puts encrypt(password)
 elsif choice == "decrypt"
-	puts "#{decryption}"
+	puts decrypt(password)
 elsif choice == "both"
-	puts "#{both}"
+	puts decrypt(encrypt(password))
 else
 	puts "Try again, I can only accept 'encrypt' or 'decrypt', or perhaps 'both'"
 end
