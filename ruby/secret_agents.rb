@@ -19,12 +19,16 @@ def decrypt(string)
 	string.tr(' ', '!')
 	string.tr('a', ' ')
 	string2 = "abcdefghijklmnopqrstuvwxyz !"
-	y = 0
-	until y == string.length
-		string[y] = string2[string2.index(string[y]) - 1]
-		y += 1
+	x = 0
+	until x == string.length
+		string[x] = string2[string2.index(string[x]) - 1]
+		x += 1
 	end
 end
+#the bug appears to be in the decrypt method
+#tho this method has been confirmed successful on its own
+
+
 
 #driver code
 puts "do you need to encrypt or decrypt a password?"
@@ -36,12 +40,8 @@ password = gets.chomp
 
 
 #here's the meltdown. 
-
-
 #lines 48-51 DON'T WORK.
-#extra variables/interpolation removed 
-
-#46-47 are producing an output. 
+#46-47 are now producing an output. 
 #52-3 have produced output in every variation.
 if choice == "encrypt"
 	puts encrypt(password)
