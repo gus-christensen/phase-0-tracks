@@ -20,12 +20,10 @@ p "Stop! You’re under arrest!".upcase
 
 p "the usual".concat" suspects"
 p "the usual".insert(-1, " suspects")
-#p "the usual".
 #=> "the usual suspects"
 
 p " suspects".insert(0, "the usual")
 p " suspects".prepend("the usual")
-#p " suspects".
 # => "the usual suspects"
 
 p "The case of the disappearing last letter".chop
