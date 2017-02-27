@@ -76,8 +76,8 @@ def sortArray(array)
 	      end
 	    end
 	    newArray << minNo
-	    array[array.index(minNo)] = nil
-        array.delete(nil)
+		array[array.index(minNo)] = nil
+    	array.delete(nil)
 	end
 	return newArray
 end
