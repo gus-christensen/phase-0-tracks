@@ -76,12 +76,13 @@ def sortArray(array)
 	      end
 	    end
 	    newArray << minNo
-	    array.delete(minNo)
+	    array[array.index(minNo)] = nil
+        array.delete(nil)
 	end
 	return newArray
 end
 
-p sortArray([4, 7, 2, 9, 1, 0])
+p sortArray([4, 7, 2, 9, 2, 1, 0])
 
 
 
