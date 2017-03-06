@@ -8,7 +8,7 @@
 #--the input should either be taken in password format.. 
 #--or the terminal should be cleared after initializing.
 class HangedGame
-	attr_reader :gameboard_array, :is_over
+	attr_reader :gameboard_array, :is_over, :phrase_uniq_char
 	attr_accessor :remaining_guesses, :remaining_letters
 
 	def initialize(phrase)
@@ -17,12 +17,13 @@ class HangedGame
 		@phrase_uniq_char = phrase.delete(" ").downcase.split(//).uniq
 		@remaining_letters = "abcdefghijklmnopqrstuvwxyz"
 		@is_over = false
-		if @phrase_uniq_char.length <= 9
+		if @phrase_uniq_char.length < 10
 			@remaining_guesses = @phrase_uniq_char.length + 3
 		else
 			@remaining_guesses = 12
 		end 
 		puts "starting guessing! Here's the clue:"
+		p show_gameboard
 	end
 
 	def show_gameboard
@@ -63,16 +64,21 @@ game = HangedGame.new(gets.chomp)
 puts "Okay, now it's time for User2 to guess a letter."
 
 until @is_over
-	take_a_guess(gets.chomp)
 	if @remaining_guesses == 0
 		puts "Game Over! you ran out of guesses"
 		@is_over = true
-	elsif @phrase_uniq_char.each {|x| remaining_letters.include?(x) = false}
-	puts "and your puzzle remains unsolved."
-	else
-		puts "which letter?"
-		take_a_guess(gets.chomp)
-		p show_gameboard
+	else 
+		x = 0
+		until x == @remaining_letters.length 
+			if @phrase_array.include?(@remaining_letters[x]) == false
+				puts "look at that beautifully solved puzzle!!!!"
+				p show_gameboard
+			else
+				puts "which letter?"
+				game.take_a_guess(gets.chomp)
+				p show_gameboard
+			end
+		end		
 	end
 end
 
