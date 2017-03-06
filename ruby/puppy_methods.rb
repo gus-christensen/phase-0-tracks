@@ -71,15 +71,13 @@ while count < 51
 end
 p array
 
-Integer_Fun_Hash = {}
+integer_Fun_Hash = {}
 array.map!{|x| x.to_sym}
 p array
 array.each{|x| x = Integer_Fun.new} 
-array.each{|x| Integer_Fun_Hash[x.to_sym] = x[-1].to_i}
-p Integer_Fun_Hash
-#something to do with strings becoming variables.. not properly initializing? 
-#err:line80
-Integer_Fun_Hash.each{|x, y| x.modulotwo(y)}
+array.each{|x| integer_Fun_Hash[x.to_sym] = x[-1].to_i}
+p integer_Fun_Hash
+integer_Fun_Hash.each{|x, y| x.modulotwo(y)}
 
 
 
