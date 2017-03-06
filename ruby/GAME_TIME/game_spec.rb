@@ -2,22 +2,36 @@
 require_relative "game"
 
 describe HangedGame do
-	let(:hangedgame) {HangedGame.new}
+	let(:hangedgame) {HangedGame.new("Turtle Power")}
 
-	it "accepts a word or phrase from user1" do
-		expect(game. ( )).to eq 
+	it "shows the gameboard after several right answers" do
+		hangedgame.take_a_guess("t")
+		hangedgame.take_a_guess("p")
+		hangedgame.take_a_guess("e")
+		hangedgame.take_a_guess("r")
+		expect(hangedgame.show_gameboard).to eq "t _ r t _ e   p _ _ e r "
+	end
+#RED TO GREEEEEEN!
+
+
+	it "narrows the guessing pool" do
+		hangedgame.take_a_guess("t")
+		hangedgame.take_a_guess("p")
+		hangedgame.take_a_guess("e")
+		hangedgame.take_a_guess("r")
+		expect(hangedgame.remaining_letters).to eq "abcdfghijklmnoqsuvwxyz"
+	end
 
 	it "" do
-		expect(game. ( )).to eq 
+		expect(hangedgame. ( )).to eq 
 
-	it "" do
-		expect(game. ( )).to eq 
+end
 
-	it "" do
-		expect(game. ( )).to eq 
+#	it "" do
+#		expect(hangedgame. ( )).to eq 
 
-	it "" do
-		expect(game. ( )).to eq 
+#	it "" do
+#		expect(hangedgame. ( )).to eq 
 
 #One user can enter a word (or phrase, 
 #if you would like your game to support that), 

@@ -8,7 +8,8 @@
 #--the input should either be taken in password format.. 
 #--or the terminal should be cleared after initializing.
 class HangedGame
-	attr_accessor :is_over, :remaining_guesses, :remaining_letters, :phrase_array
+	attr_reader :gameboard_array, :is_over
+	attr_accessor :remaining_guesses, :remaining_letters
 
 	def initialize(phrase)
 		@phrase = phrase.downcase
@@ -36,7 +37,7 @@ class HangedGame
 				x += 1
 			end
 		end
-		puts @gameboard_array.join
+		return @gameboard_array.join
 	end
 
 	def take_a_guess(letter)
@@ -52,15 +53,34 @@ class HangedGame
 			puts "you already guessed that!"
 		end	
 	end
+
 end
 
-game = HangedGame.new("turtles yes")
-game.show_gameboard
 
-while !@is_over
-	
-game.take_a_guess(gets.chomp)
-game.show_gameboard
+puts "User1, enter your secret phrase."
+game = HangedGame.new(gets.chomp)
+
+puts "Okay, now it's time for User2 to guess a letter."
+
+until @is_over
+	take_a_guess(gets.chomp)
+	if @remaining_guesses == 0
+		puts "Game Over! you ran out of guesses"
+		@is_over = true
+	elsif @phrase_uniq_char.each {|x| remaining_letters.include?(x) = false}
+	puts "and your puzzle remains unsolved."
+	else
+		puts "which letter?"
+		take_a_guess(gets.chomp)
+		p show_gameboard
+	end
+end
+
+
+#while !@is_over
+
+#game.take_a_guess(gets.chomp)
+#game.show_gameboard
 
 
 
