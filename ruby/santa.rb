@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
@@ -53,3 +53,18 @@ santas << Santa.new("N/A", "N/A")
 
 p santas
 
+#debug: @age moved from attr_reader to attr_accessor
+def Santa_Generator(x)
+	genders = ["agender", "female", "bigender", "male", "gender fluid", "N/A"]
+	ethnicities = ["black", "Latino", "white", "Japanese", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+	count = 0
+	while count < x
+		santa = Santa.new(genders.sample, ethnicities.sample)
+		santa.age=(rand(140))
+		puts "Santa Numero #{count + 1}:"
+		p santa
+		count +=1
+	end
+end
+
+Santa_Generator(120)
