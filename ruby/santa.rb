@@ -29,6 +29,20 @@ class Santa
 		end
 	end
 
+#getter methods
+# def age
+#	@age
+# end
+
+#def ethnicity
+# 	@ethnicity
+# end
+
+#setter methods
+# def gender=(new_gender)
+#	@gender = new_gender
+# end
+
 end
 
 jay = Santa.new("non-conforming", "prefers not to say")
