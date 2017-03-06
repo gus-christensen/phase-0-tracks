@@ -22,8 +22,6 @@ describe HangedGame do
 		expect(hangedgame.remaining_letters).to eq "abcdfghijklmnoqsuvwxyz"
 	end
 
-	it "" do
-		expect(hangedgame. ( )).to eq 
 
 end
 
