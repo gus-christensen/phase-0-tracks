@@ -15,6 +15,8 @@ function reverseString(string) {
 	return reverseStr;
 }
 
-// var str1 = "Backwards?";
-console.log("Backwards?".reverseString)
+var str1 = "Backwards?";
+if (1 == 1) {
+	console.log(reverseString(str1))
+}
 // node explore.js yields only "undefined", no error messages or line references
