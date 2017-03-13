@@ -22,3 +22,48 @@ function longestString(newArray) {
 }
 
 console.log(longestString(strings))
+
+
+// define a function that 
+// takes two objects as arguments
+// and returns true if there are any matching key/value pairs.
+//function returns false if there are no matching pairs.
+
+
+function pairMatch(obj1, obj2) {
+// make key arrays
+	var arr1 = Object.keys(obj1)
+	var arr2 = Object.keys(obj2)
+// find the intersection of the key arrays
+// PLAGIARISM ALERT: I'm surprised there isnt a simpler array intersection technique,
+// but this is what I would have been able to write on my own.
+// found this array intersection function
+	var commonValues = [];
+	var i, j;
+	var arr1Length = arr1.length;
+	var arr2Length = arr2.length;
+
+	for (i = 0; i < arr1Length; i++) {
+	    for (j = 0; j < arr2Length; j++) {
+	        if (arr1[i] === arr2[j]) {
+	            commonValues.push(arr1[i]);
+	        }
+	    }
+	}
+
+// second, check if the shared keys have shared values
+	var commonValuesLength = commonValues.length
+
+	for (i = 0; i < commonValuesLength; i++) {
+		if (obj1[commonValues[i]] == obj2[commonValues[i]]) {
+			return true
+		}
+		else {
+			return false
+		}
+	}
+}
+
+
+
+
