@@ -67,8 +67,34 @@ function pairMatch(obj1, obj2) {
 	}
 }
 
-console.log(pairMatch({name: "Steven", age: 5}, {name: "Tamir", age: 54}))
+console.log(pairMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
 
 
+
+// function that takes an integer as an argument for array length.
+// returned array should have strings of length 1-10, of random letters
+
+function Rando(int) {
+	var randoArray = []
+	for ( var i = 0; i < int; i++ ) {
+// randomly generate letters. between 1-10 letters. # of letter is also random.
+		var stringLength = Math.floor((Math.random() * 10) + 1);
+		var text = "";
+    	var possible = "abcdefghijklmnopqrstuvwxyz";
+    	for ( var j = 0; j < stringLength; j++ ) {
+        	text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        randoArray.push(text)
+	}
+	return randoArray
+}
+
+// do 10 times.. find the longest string of a randomly generated array
+for ( d = 0; d < 10; d++) {
+	var results = Rando(3);
+	console.log(results);
+	console.log(longestString(results));
+}
+// longestString does not currently account for multiple longest strings.
 
 
