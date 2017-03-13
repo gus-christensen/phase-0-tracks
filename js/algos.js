@@ -52,17 +52,22 @@ function pairMatch(obj1, obj2) {
 	}
 
 // second, check if the shared keys have shared values
-	var commonValuesLength = commonValues.length
-
+	var commonValuesLength = commonValues.length;
+	var pairMatches = {};
 	for (i = 0; i < commonValuesLength; i++) {
 		if (obj1[commonValues[i]] == obj2[commonValues[i]]) {
-			return true
-		}
-		else {
-			return false
+			pairMatches[commonValues[i]] = obj1[commonValues[i]]
 		}
 	}
+
+	if (Object.keys(pairMatches).length == 0 ) {
+		return false
+	} else {
+		return true
+	}
 }
+
+console.log(pairMatch({name: "Steven", age: 5}, {name: "Tamir", age: 54}))
 
 
 
