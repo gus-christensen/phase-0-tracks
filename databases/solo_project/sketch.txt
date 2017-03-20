@@ -1,0 +1,8 @@
+
+CLIENTS
+
+id (integer primary key)
+name (varchar 255)		LISTINGS
+phone (varchar 255)		
+inquired_about (int) 	>>>	id (integer primary key)
+				address (varchar 255)
