@@ -1,0 +1,49 @@
+1.
+
+sqlite> SELECT * FROM clients;
+1|Jennifer|555-6789|3
+2|Tiff|555-3838|3
+3|Sandra|555-0003|3
+
+
+2.
+
+sqlite> UPDATE clients SET inquired_about=1 WHERE name="Tiff";
+
+
+3.
+
+sqlite> SELECT * FROM clients, listings WHERE clients.inquired_about = listings.id;
+1|Jennifer|555-6789|3|3|345 Broadway
+2|Tiff|555-3838|1|1|1405 14th St
+3|Sandra|555-0003|3|3|345 Broadway
+
+
+4.
+
+sqlite> SELECT clients.name, clients.phone, listings.address FROM clients JOIN listings ON clients.inquired_about = listings.id;
+Jennifer|555-6789|345 Broadway
+Tiff|555-3838|1405 14th St
+Sandra|555-0003|345 Broadway
+
+
+5.
+
+sqlite> DELETE FROM clients WHERE inquired_about=3;
+sqlite> DELETE FROM listings WHERE id=3;
+
+
+JOINS
+
+sqlite> SELECT clients.name, clients.phone, listings.address FROM clients, listings WHERE listings.id=1 AND clients.inquired_about = listings.id;
+Tiff|555-3838|1405 14th St
+Jennifer|555-6789|1405 14th St
+
+sqlite> SELECT clients.name, clients.phone, listings.address FROM clients, listings WHERE listings.id=1 AND clients.inquired_about = listings.id ORDER BY clients.name ASC;
+Jennifer|555-6789|1405 14th St
+Tiff|555-3838|1405 14th St
+
+sqlite> SELECT listings.address FROM clients, listings WHERE clients.name="Jennifer" AND clients.inquired_about = listings.id;
+22 St Charles
+1405 14th St
+
